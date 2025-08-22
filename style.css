@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: #f9f9f9;
+    background: #ffe4f2;
 }
 
 h1 {
@@ -9,8 +9,8 @@ h1 {
 }
 
 #graph {
-    border: 2px solid #333;
-    background: #fff;
+    border: 2px solid #e91e63;
+    background: #fff0f6;
     margin: 20px auto;
     display: block;
 }
@@ -24,10 +24,19 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background: #f06292;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(233,30,99,0.1);
+    transition: background 0.2s;
+}
+button:hover {
+    background: #e91e63;
 }
 
 #feedback {
     margin-top: 15px;
     font-weight: bold;
-    color: #d32f2f;
+    color: #e91e63;
 }

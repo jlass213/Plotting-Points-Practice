@@ -23,7 +23,7 @@ function gridToCanvas(x, y) {
 
 function drawGrid() {
     ctx.clearRect(0, 0, size, size);
-    ctx.strokeStyle = '#ccc';
+    ctx.strokeStyle = '#f8bbd0';
     ctx.lineWidth = 1;
     // Draw grid lines and numbers
     ctx.font = '14px Arial';
@@ -51,7 +51,7 @@ function drawGrid() {
         }
     }
     // Draw axes
-    ctx.strokeStyle = '#333';
+    ctx.strokeStyle = '#e91e63';
     ctx.lineWidth = 2;
     // x-axis
     ctx.beginPath();
@@ -65,13 +65,13 @@ function drawGrid() {
     ctx.stroke();
 }
 
-function drawPoint(point, color = 'blue') {
+function drawPoint(point, color = '#e91e63') {
     const { cx, cy } = gridToCanvas(point.x, point.y);
     ctx.beginPath();
     ctx.arc(cx, cy, 12, 0, 2 * Math.PI);
     ctx.fillStyle = color;
     ctx.fill();
-    ctx.strokeStyle = '#222';
+    ctx.strokeStyle = '#ad1457';
     ctx.stroke();
 }
 
