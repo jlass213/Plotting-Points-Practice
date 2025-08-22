@@ -25,18 +25,30 @@ function drawGrid() {
     ctx.clearRect(0, 0, size, size);
     ctx.strokeStyle = '#ccc';
     ctx.lineWidth = 1;
-    // Draw grid lines
+    // Draw grid lines and numbers
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#333';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     for (let i = gridMin; i <= gridMax; i++) {
-        // Vertical
+        // Vertical grid lines
         ctx.beginPath();
         ctx.moveTo(gridToCanvas(i, gridMin).cx, gridToCanvas(i, gridMin).cy);
         ctx.lineTo(gridToCanvas(i, gridMax).cx, gridToCanvas(i, gridMax).cy);
         ctx.stroke();
-        // Horizontal
+        // Horizontal grid lines
         ctx.beginPath();
         ctx.moveTo(gridToCanvas(gridMin, i).cx, gridToCanvas(gridMin, i).cy);
         ctx.lineTo(gridToCanvas(gridMax, i).cx, gridToCanvas(gridMax, i).cy);
         ctx.stroke();
+        // X axis numbers (bottom)
+        if (i !== 0) {
+            ctx.fillText(i, gridToCanvas(i, 0).cx, size / 2 + 20);
+        }
+        // Y axis numbers (left)
+        if (i !== 0) {
+            ctx.fillText(i, size / 2 - 20, gridToCanvas(0, i).cy);
+        }
     }
     // Draw axes
     ctx.strokeStyle = '#333';
